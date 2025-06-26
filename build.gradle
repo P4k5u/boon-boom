@@ -4,7 +4,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 ext {
-	springAiVersion = "1.0.0-M7"
+	springAiVersion = "1.1.0-SNAPSHOT"
 }
 
 group = 'com.example'
@@ -24,7 +24,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework:spring-web'
-	implementation "org.springframework.ai:spring-ai-starter-mcp-server:${springAiVersion}"
+	implementation("org.springframework.ai:spring-ai-starter-mcp-server:1.0.0")
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'com.h2database:h2'
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
